@@ -8,6 +8,8 @@ export default function Navbar(){
   return (
     <div className="navbar">
       {token && <Link to="/profile">Profile</Link>}
+      {token && <Link to="/home">Home</Link>}
+      
       <Link to="/public"></Link>
       {token && <button onClick={logout}>Logout</button>}
     </div>

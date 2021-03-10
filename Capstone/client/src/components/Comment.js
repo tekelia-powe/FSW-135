@@ -5,7 +5,7 @@ export default function Comment(props){
   return (
     <div className="todo">
       
-      <h3>{ comment }</h3>
+      <h3>{ comment} {_id}</h3>
       </div>
   )
 }

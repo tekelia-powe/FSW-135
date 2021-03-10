@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 // import IssueForm from './IssueForm.js.js'
 // import IssueList from './IssueList.js.js'
-import Menu from '../components/Menu.js'
+import IssueMain from '../components/IssueMain.js'
 import { UserContext } from '../context/UserProvider.js'
 
 export default function HateSpeech(){

@@ -11,14 +11,26 @@ const issueSchema = new Schema({
         type: String,
         required: true
     },
-    // _id:{
-    //     type: Object
-    // },
+    upVotes:{
+        type: Number,
+    },
+    downVotes: {
+        type: Number,
+      },
     user: {
         type: Schema.Types.ObjectId,
-        ref: "User", 
+        ref: "User",
         required: true
-    },
+      },
+      upVoters: {
+        type: Array
+      },
+      downVoters: {
+        type: Array
+      },
+      comments: {
+        type: Array
+      }
     
 })
 

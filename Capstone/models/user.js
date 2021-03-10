@@ -24,7 +24,12 @@ const userSchema = new Schema({
     mod_date: {
         type: Date,
         default: Date.now
-    }
+    },
+    issues: {
+        type: Array,
+        default: []
+        
+      }
 })
 
 userSchema.pre('save', function(next){

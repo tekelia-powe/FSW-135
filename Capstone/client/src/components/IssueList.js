@@ -4,7 +4,7 @@ import Issue from './Issue.js'
 export default function IssueList(props){
   const { issues } = props
   return (
-    <div className="todo-list">
+    <div className="issue_grid">
       { issues.map(issue => <Issue {...issue} key={issue._id}/>) }
     </div>
   )

@@ -7,10 +7,7 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    parent_comment_id: {
-        type: String,
-        
-    },
+    
     comment_date: {
         type: Date,
         default: Date.now
@@ -21,11 +18,11 @@ const commentSchema = new Schema({
         required: true
     },
 
-    // issue: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Issue", 
-    //     required: true
-    // }
+    issue: {
+        type: Schema.Types.ObjectId,
+        ref: "Issue", 
+        
+    }
 })
 
 module.exports = mongoose.model('Comment', commentSchema)

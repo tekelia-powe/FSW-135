@@ -38,6 +38,7 @@ commentRouter.get('/:userId', (req, res, next) => {
 // Add new comment
 commentRouter.post('/', (req, res, next) => {
   req.body.user = req.user._id
+  req.body.username = req.user.username
   const newComment = new Comment(req.body)
   newComment.save((err, savedComment) => {
     if(err){
@@ -48,18 +49,6 @@ commentRouter.post('/', (req, res, next) => {
   })
 })
 
-// Add many comments
-commentRouter.post('/manycomments', (req, res, next) => {
-  const Comments = req.body
-  const newComment = new Comment(Comments)
-  Comment.insertMany(Comments, (err, savedComment) => {
-    if(err){
-      res.status(500)
-      return next(err)
-    }
-    return res.status(201).send(savedComment)
-  })
-})
 
 //Update Comment
 commentRouter.put("/:commentId", (req, res, next) => {
