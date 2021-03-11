@@ -9,15 +9,50 @@
 }
 
 .app {
-  background-color: #eee9;
+  background-color: white;
 }
 
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 40px;
+  height: 60px;
   background-color: #3339;
+  padding: 25px;
+  background-color: blue;
+  color: white;
+}
+.logout_btn{
+  padding: 10px;
+  border-radius: 10px;
+}
+.delete_btn{
+  padding: 10px;
+  border-radius: 10px;
+}
+.edit_btn{
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: white;
 }
 
 .auth-container {
@@ -25,6 +60,22 @@
   align-items: center;
   flex-direction: column;
   height: max-content;
+  
+  border: 5px solid black;
+  padding: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.inside-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  background-color: red;
+  border: 5px solid black;
+  padding: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .auth-container > h1 {
@@ -63,14 +114,12 @@
   border-radius: 3px;
   padding: 10px;
   text-align: center;
-}
-.issue button{
-  margin:5px;
-  padding:5px;
+  background-color: white;
 }
 
+
 .public {
-  height: 100vh;
+  background-color: black;
 }
 
 .profile {
@@ -182,9 +231,42 @@
 }
 
 .issue_grid{
-  display: grid;
-  grid-template-columns: auto auto auto;
+  /* display: grid;
+  grid-template-columns: auto auto ;
   grid-column-gap: 50px;
-  grid-row-gap: 50px;
+  grid-row-gap: 50px; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+}
+.userCard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
 
+.publicIssuesHolder {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.issue {
+  border: 2px solid ;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  width: 400px;
+  margin: 20px auto 20px auto;
+  background-color: blue;
+}
+
+.title{
+  font-weight: bolder;
 }

@@ -7,11 +7,11 @@ export default function Navbar(){
 
   return (
     <div className="navbar">
-      {token && <Link to="/profile">Profile</Link>}
+      
       {token && <Link to="/home">Home</Link>}
       {token && <Link to="/results">View Results</Link>}
       {/* <Link to="/public"></Link> */}
-      {token && <button onClick={logout}>Logout</button>}
+      {token && <button className="logout_btn" onClick={logout}>Logout</button>}
     </div>
   )
 }

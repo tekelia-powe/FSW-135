@@ -12,12 +12,9 @@ export default function Profile(){
   } = useContext(UserContext)
 
   return (
-    <div className="profile">
+    <div className="public">
       
-      <h1>{username}'s Issues</h1>
-      <IssueForm addIssue={addIssue}/>
-      <h3>Your Issues</h3>
-      <IssueList issues={issues}/>
+      
     </div>
   )
 }

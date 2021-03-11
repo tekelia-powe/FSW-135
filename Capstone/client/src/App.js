@@ -40,19 +40,7 @@ export default function App(){
           token={token}
         />
 
-        <ProtectedRoute 
-          path="/hatespeech"
-          component = {HateSpeech}
-          redirectTo = '/'
-          token={token}
-          />
         
-        {/* <ProtectedRoute 
-          path="/issueFA"
-          component = {IssueFA}
-          redirectTo = '/'
-          token={token}
-          /> */}
       </Switch>
     </div>
   )

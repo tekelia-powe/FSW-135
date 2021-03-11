@@ -12,12 +12,13 @@ export default function IssueMain(){
   } = useContext(UserContext)
 
   return (
+    <div className="inside-container">
     <div className="profile">
       {/* <h1>Welcome @{username}!</h1> */}
       
       <IssueForm addIssue={addIssue}/>
       
       <IssueList issues={issues}/>
-    </div>
+    </div></div>
   )
 }

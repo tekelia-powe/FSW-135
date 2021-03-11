@@ -65,7 +65,7 @@ issueRouter.get("/user/:userId", (req, res, next)=>{
     })
   })
 
-//Update Issue
+
 //Update Issues
 issueRouter.put("/:issueId", (req, res, next) => {
   Issue.findOneAndUpdate(
@@ -97,38 +97,7 @@ issueRouter.delete("/:issueId", (req, res, next) => {
     )
   })
 
-  //  //up vote
-  //  issueRouter.put('/like/:issueID', (req, res, next) => {
-  //   Issue.findOneAndUpdate(
-  //     { _id: req.params.issueID },
-  //     { $inc: { votes: 1 }},
-  //     { new: true },
-  //     (err, updatedIssue) => {
-  //       if(err) {
-  //         res.status(500)
-  //         return next(err)
-  //       }
-  //       return res.status(201).send(updatedIssue)
-  //     }
-  //   )
-  // })
-
-
-  // //down vote
-  // issueRouter.put('/dislike/:issueID', (req, res, next) => {
-  //   Issue.findOneAndUpdate(
-  //     { _id: req.params.issueID },
-  //     { $inc: { votes: -1 }},
-  //     { new: true },
-  //     (err, updatedIssue) => {
-  //       if(err) {
-  //         res.status(500)
-  //         return next(err)
-  //       }
-  //       return res.status(201).send(updatedIssue)
-  //     }
-  //   )
-  // })
+ 
 
   //Upvote
 issueRouter.put("/upvotes/:issueId", (req, res, next)=> {

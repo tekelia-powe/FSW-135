@@ -20,7 +20,7 @@ function Comment(props) {
     return (
         <>
 
-        <h4>Comment: {comment}</h4>
+        <h4>Comment: {comment}</h4><br></br>
         <button onClick={()=> props.deleteComment(props._id)}>Delete Comment</button>
         </>
     )

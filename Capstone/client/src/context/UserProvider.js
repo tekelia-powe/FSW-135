@@ -110,7 +110,7 @@ export default function UserProvider(props){
       .then(res => {
         setUserState(prevState => ({
           ...prevState,
-          issues: [...res.data]
+          issues: res.data
         }))
         
       })

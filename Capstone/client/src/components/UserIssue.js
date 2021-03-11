@@ -76,14 +76,16 @@ export default function UserIssue(props) {
     return (
         !commentToggle?
             <div className="issue">
-                    <h1>{ title }</h1>
-                    <h3>{ description }</h3>
-                    <h3>UpVotes: {votes.upVotes}</h3>
-                    <h3>DownVotes: {votes.downVotes}</h3>
-                    {comments.map(comment => <Comment {...comment} deleteComment={deleteComment}/>)}
+                    <h1><span className="title">Title: </span>{ title }</h1>
+                    <h3><span className="title">Description: </span>{ description }</h3>
+                    <h3><span className="title">UpVotes: </span>{votes.upVotes}</h3>
+                    <h3><span className="title">DownVotes </span>{votes.downVotes}</h3>
+                    
+                    {comments.map(comment => <Comment {...comment} />)}<br></br>
+                    <button onClick={()=>setCommentToggle(prevToggle => !prevToggle)}>Add Comments</button><br></br>
                     <button onClick={()=>upVote(_id)}>UpVote</button>
                     <button onClick={()=>downVote(_id)}>DownVote</button>
-                    <button onClick={()=>setCommentToggle(prevToggle => !prevToggle)}>Add Comments</button>
+                    
                     <p style={{color:"red"}}>{voteErrMsg}</p> 
             </div>
 
@@ -99,7 +101,7 @@ export default function UserIssue(props) {
                     <button onClick={()=>downVote(_id)}>DownVote</button>
                     <button onClick={()=>setCommentToggle(prevToggle => !prevToggle)}>View Comments</button>
                     <p style={{color:"red"}}>{voteErrMsg}</p> 
-            </div> */}
+            </div> */}<br></br>
                 <CommentForm addComment={addComment} username={username}/>
                 {comments.map(comment => <Comment {...comment} deleteComment={deleteComment}/>)}
                 <button onClick={()=>setCommentToggle(prevToggle => !prevToggle)}>Back</button>

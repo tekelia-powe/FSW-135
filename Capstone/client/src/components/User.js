@@ -20,6 +20,7 @@ function User(props) {
     []
     )
     return (
+        
         <div className="userCard">
             {/* <h1> My Issues</h1> */}
             {issues.map(issue => <UserIssue {...issue}/>)}
