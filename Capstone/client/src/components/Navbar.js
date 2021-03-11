@@ -9,8 +9,8 @@ export default function Navbar(){
     <div className="navbar">
       {token && <Link to="/profile">Profile</Link>}
       {token && <Link to="/home">Home</Link>}
-      
-      <Link to="/public"></Link>
+      {token && <Link to="/results">View Results</Link>}
+      {/* <Link to="/public"></Link> */}
       {token && <button onClick={logout}>Logout</button>}
     </div>
   )

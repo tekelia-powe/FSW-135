@@ -6,6 +6,8 @@ export default function Issue(props){
   const { title, description, _id } = props
   const [canEdit, toggleCanEdit] = useState(false)
   const {addIssue, deleteIssue, editIssues} = useContext(UserContext)
+
+  console.log(canEdit)
   return (
     <div className="issue">
       {

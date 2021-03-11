@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar.js'
 import Auth from './components/Auth.js'
 import Profile from './components/Profile.js'
-import Public from './components/Public.js'
+import Results from './components/Results.js'
 import { UserContext } from './context/UserProvider.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import Home from './pages/Home.js'
@@ -19,12 +19,12 @@ export default function App(){
           exact path="/" 
           render={()=> token ? <Redirect to="/home"/> : <Auth />}
         />
-        <ProtectedRoute 
+        {/* <ProtectedRoute 
           path="/profile"
-          component = {Profile}
+          component = {Public}
           redirectTo = '/'
           token={token}
-        />
+        /> */}
 
         <ProtectedRoute 
           path="/home"
@@ -34,8 +34,8 @@ export default function App(){
         />
 
         <ProtectedRoute 
-          path="/public"
-          component = {Public}
+          path="/results"
+          component = {Results}
           redirectTo = '/'
           token={token}
         />

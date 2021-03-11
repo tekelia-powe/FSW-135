@@ -1,11 +1,33 @@
-import React from 'react'
-import IssueList from './IssueList.js'
-import Issue from './Issue.js'
+import React, {useState, useEffect} from "react"
+import User from "./User.js"
+const axios = require("axios")
 
-export default function Public(){
-  return (
-    <div className="public">
+function Public() {
+    const userAxios = axios.create()
 
-    </div>
-  )
+    userAxios.interceptors.request.use(config => {
+        const token = localStorage.getItem("token")
+        config.headers.Authorization = `Bearer ${token}`
+        return config
+    })
+
+    const [users, setUsers] = useState([])
+
+
+    
+    useEffect(()=>{userAxios.get("/api/users")
+        .then(res => setUsers(res.data))
+        .catch(err => console.log(err.response.data.errMsg))
+        },
+        []
+    )
+    
+    return (
+        <div className="publicIssuesHolder">
+            {users.map(user => <User {...user}/>)}
+        </div>
+    )
+
 }
+
+export default Public

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const initInputs = {comment: "" }
+const initInputs = {comment : "" }
 
 export default function CommentForm(props){
   const [inputs, setInputs] = useState(initInputs)
@@ -22,16 +22,17 @@ export default function CommentForm(props){
     setInputs(initInputs)
   }
 
-  const {comment} = inputs
+  const {description, title} = inputs
   return (
     <form onSubmit={handleSubmit}>
       <input 
         type="text" 
         name="comment" 
-        value={comment} 
+        value={title} 
         onChange={handleChange} 
-        placeholder="Comment"/>
-      <button>Add Comment</button>
+        placeholder="Please enter comment "/>
+        
+      <button>Add</button>
     </form>
   )
 }

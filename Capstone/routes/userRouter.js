@@ -4,7 +4,7 @@ const User = require('../models/user.js')
 
 // Get All
 userRouter.get('/', (req, res, next) => {
-  User.find((err, users) => {
+  User.find({},(err, users) => {
     if(err){
       res.status(500)
       return next(err)

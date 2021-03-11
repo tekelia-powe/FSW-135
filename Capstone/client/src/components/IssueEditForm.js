@@ -2,8 +2,8 @@ import React, {useState, useContext} from "react"
 import { UserContext } from '../context/UserProvider.js'
 
 export default function IssueEditForm(props) {
-    // const {addIssue, handleSubmit} = props
-    // const {handleSubmit} = props
+    const {addIssue, _id} = props
+    //const {handleSubmit} = props
     const initInputs = {
         title: props.title || "",
         description: props.description || "",
@@ -22,7 +22,8 @@ export default function IssueEditForm(props) {
 
     function handleSubmit(e){
         e.preventDefault()
-        editIssue(inputs, props._id)
+        editIssue(inputs, _id)
+        console.log(_id)
         props.toggleCanEdit(prevState => !prevState)
     }
 
